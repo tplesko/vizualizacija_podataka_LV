@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadatak 2</title>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+</head>
+<body>
+    <script>
+        d3.select("body")
+          .append("h1")
+          .text("Vizualizacija podataka LV1");
+
+        let container = d3.select("body").selectAll("div")
+            .data([{title: "Podnaslov 1", text:"Tekst 1"},
+                    {title: "Podnaslov 2", text:"Tekst 2"}
+                    ])
+            .enter()
+            .append("div")
+            .attr("id", (d, i) => "ID" + (i + 1));
+
+        container.append("h2").text(d => d.title);
+        container.append("p").text(d => d.text);
+
+        d3.selectAll("p").text("Promijenjen tekst");
+    </script>
+</body>
+</html>
