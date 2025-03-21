@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadatak 3</title>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+</head>
+<body>
+    <script>
+        let data = d3.range(10).map(i => ({
+            title: `Podnaslov ${i + 1}`,
+            text: `Tekst ${i + 1}`
+        }));
+
+        let container = d3.select("body").selectAll("div")
+            .data(data)
+            .enter()
+            .append("div")
+            .attr("id", (d, i) => "ID" + (i + 1));
+
+        container.append("h2").text(d => d.title);
+        container.append("p").text(d => d.text);
+    </script> 
+</body>
+</html>
