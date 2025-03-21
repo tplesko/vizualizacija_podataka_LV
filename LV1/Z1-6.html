@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadatak 6</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <script>
+        let svg = d3.select("body").append("svg")
+                    .attr("width", 400)
+                    .attr("height", 300);
+        svg.append("rect")
+        .attr("width", 400)
+        .attr("height", 300)
+        .attr("fill", "skyblue");
+
+        svg.append("rect")
+           .attr("x", 100)
+           .attr("y", 150)
+           .attr("width", 150)
+           .attr("height", 100)
+           .attr("fill", "brown");
+
+        svg.append("polygon")
+           .attr("points", "100,150 175,100 250,150")
+           .attr("fill", "red");
+
+        svg.append("rect")
+           .attr("x", 160)
+           .attr("y", 200)
+           .attr("width", 30)
+           .attr("height", 50)
+           .attr("fill", "black");
+
+        svg.append("circle")
+           .attr("cx", 50)
+           .attr("cy", 50)
+           .attr("r", 30)
+           .attr("fill", "yellow");
+
+        svg.append("rect")
+           .attr("x", 0)
+           .attr("y", 250)
+           .attr("width", 400)
+           .attr("height", 50)
+           .attr("fill", "green");
+
+        let cloud1 = svg.append("g");
+
+        cloud1.append("ellipse")
+            .attr("cx", 250)
+            .attr("cy", 50)
+            .attr("rx", 50)
+            .attr("ry", 20)
+            .attr("fill", "white");
+
+        cloud1.append("ellipse")
+            .attr("cx", 270)
+            .attr("cy", 40)
+            .attr("rx", 30)
+            .attr("ry", 15)
+            .attr("fill", "white");
+
+        cloud1.append("ellipse")
+            .attr("cx", 230)
+            .attr("cy", 40)
+            .attr("rx", 25)
+            .attr("ry", 15)
+            .attr("fill", "white");
+
+        let cloud2 = svg.append("g");
+
+        cloud2.append("ellipse")
+            .attr("cx", 320)
+            .attr("cy", 80)
+            .attr("rx", 35)
+            .attr("ry", 20)
+            .attr("fill", "white");
+
+        cloud2.append("ellipse")
+            .attr("cx", 340)
+            .attr("cy", 70)
+            .attr("rx", 30)
+            .attr("ry", 15)
+            .attr("fill", "white");
+
+        cloud2.append("ellipse")
+            .attr("cx", 300)
+            .attr("cy", 70)
+            .attr("rx", 30)
+            .attr("ry", 15)
+            .attr("fill", "white");
+
+    </script>
+</body>
+</html>
