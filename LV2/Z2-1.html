@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stupičasti graf</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        .bar {
+            fill: steelblue;
+        }
+        .bar:hover {
+            fill: orange;
+        }
+        .axis-label {
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .axis path,
+        .axis line {
+            fill: none;
+            shape-rendering: crispEdges;
+        }
+    </style>
+</head>
+<body>
+    <h1>Stupčasti Graf - Proizvodnja mlijeka za piće 2008. - 2023.</h1>
+    <svg width="800" height="400"></svg> <!-- Mjesto za graf -->
+    <script>
+         const data = [
+            { godina: "2008", proizvodnja: 340952, kategorija: "Mlijeko za piće" },
+            { godina: "2009", proizvodnja: 327678, kategorija: "Mlijeko za piće" },
+            { godina: "2010", proizvodnja: 334405, kategorija: "Mlijeko za piće" },
+            { godina: "2011", proizvodnja: 331989, kategorija: "Mlijeko za piće" },
+            { godina: "2012", proizvodnja: 310851, kategorija: "Mlijeko za piće" },
+            { godina: "2013", proizvodnja: 294125, kategorija: "Mlijeko za piće" },
+            { godina: "2014", proizvodnja: 276380, kategorija: "Mlijeko za piće" },
+            { godina: "2015", proizvodnja: 296793, kategorija: "Mlijeko za piće" },
+            { godina: "2016", proizvodnja: 293445, kategorija: "Mlijeko za piće" },
+            { godina: "2017", proizvodnja: 279195, kategorija: "Mlijeko za piće" },
+            { godina: "2018", proizvodnja: 291871, kategorija: "Mlijeko za piće" },
+            { godina: "2019", proizvodnja: 296746, kategorija: "Mlijeko za piće" },
+            { godina: "2020", proizvodnja: 281820, kategorija: "Mlijeko za piće" },
+            { godina: "2021", proizvodnja: 264776, kategorija: "Mlijeko za piće" },
+            { godina: "2022", proizvodnja: 277769, kategorija: "Mlijeko za piće" },
+            { godina: "2023", proizvodnja: 252898, kategorija: "Mlijeko za piće" }
+        ];
+
+        // Postavke grafa
+        const margin = { top: 20, right: 30, bottom: 60, left: 100 };
+        const width = 800 - margin.left - margin.right;
+        const height = 400 - margin.top - margin.bottom;
+
+        // Kreiraj SVG element
+        const svg = d3.select("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+        // Skala za X os (godine)
+        const x = d3.scaleBand()
+            .domain(data.map(d => d.godina))
+            .range([0, width])
+            .padding(0.1);
+
+        // Skala za Y os (proizvodnja)
+        const y = d3.scaleLinear()
+            .domain([0, d3.max(data, d => d.proizvodnja || 0)])
+            .nice()
+            .range([height, 0]);
+
+        // Dodaj stupce (barove)
+        svg.selectAll(".bar")
+            .data(data)
+            .enter().append("rect")
+            .attr("class", "bar")
+            .attr("x", (d) => x(d.godina))
+            .attr("y", (d) => y(d.proizvodnja || 0))
+            .attr("width", x.bandwidth())
+            .attr("height", (d) => height - y(d.proizvodnja || 0));
+
+        // Dodaj X os
+        svg.append("g")
+            .attr("class", "axis")
+            .attr("transform", "translate(0," + height + ")")
+            .call(d3.axisBottom(x))
+            .selectAll(".tick text")
+            .attr("class", "axis-label")
+            .style("text-anchor", "middle");
+
+        // Dodaj Y os
+        svg.append("g")
+            .attr("class", "axis")
+            .call(d3.axisLeft(y))
+            .selectAll(".tick text")
+            .attr("class", "axis-label")
+            .style("text-anchor", "middle")
+            .attr("x", -35);
+        
+
+        // Dodane oznake na osima
+        
+        svg.append("text")
+            .attr("transform", "rotate(-90)")
+            .attr("y", -margin.left + 10)
+            .attr("x", -height / 2)
+            .attr("dy", "1em")
+            .style("text-anchor", "middle")
+            .text("Proizvodnja (u tonama)")
+            .attr("y", -margin.left + 10)
+            .attr("x", -height / 2);
+
+        svg.append("text")
+            .attr("x", width / 2)
+            .attr("y", height + margin.bottom - 10)
+            .style("text-anchor", "middle")
+            .text("Godina");
+
+    </script>
+</body>
+</html>

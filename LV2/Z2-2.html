@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stupčasti Graf s Godinama i Bojama</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <svg width="800" height="600"></svg>
+
+    <script>
+        // Podaci prema novom formatu
+        const data = [
+            { godina: "2008", proizvodnja: 340952, kategorija: "Mlijeko za piće" },
+            { godina: "2009", proizvodnja: 327678, kategorija: "Mlijeko za piće" },
+            { godina: "2010", proizvodnja: 334405, kategorija: "Mlijeko za piće" },
+            { godina: "2011", proizvodnja: 331989, kategorija: "Mlijeko za piće" },
+            { godina: "2012", proizvodnja: 310851, kategorija: "Mlijeko za piće" },
+            { godina: "2013", proizvodnja: 294125, kategorija: "Mlijeko za piće" },
+            { godina: "2014", proizvodnja: 276380, kategorija: "Mlijeko za piće" },
+            { godina: "2015", proizvodnja: 296793, kategorija: "Mlijeko za piće" },
+            { godina: "2016", proizvodnja: 293445, kategorija: "Mlijeko za piće" },
+            { godina: "2017", proizvodnja: 279195, kategorija: "Mlijeko za piće" },
+            { godina: "2018", proizvodnja: 291871, kategorija: "Mlijeko za piće" },
+            { godina: "2019", proizvodnja: 296746, kategorija: "Mlijeko za piće" },
+            { godina: "2020", proizvodnja: 281820, kategorija: "Mlijeko za piće" },
+            { godina: "2021", proizvodnja: 264776, kategorija: "Mlijeko za piće" },
+            { godina: "2022", proizvodnja: 277769, kategorija: "Mlijeko za piće" },
+            { godina: "2023", proizvodnja: 252898, kategorija: "Mlijeko za piće" }
+        ];
+
+        const margin = { top: 20, right: 30, bottom: 60, left: 100 };
+        const width = 800 - margin.left - margin.right;
+        const height = 600 - margin.top - margin.bottom;
+
+        const svg = d3.select("svg")
+            .append("g")
+            .attr("transform", `translate(${margin.left},${margin.top})`);
+
+        // Kreiranje X i Y skala
+        const x = d3.scaleBand()
+            .domain(data.map(d => d.godina)) // Umjesto indeksa, koristimo godine
+            .range([0, width])
+            .padding(0.1);
+
+        const y = d3.scaleLinear()
+            .domain([0, d3.max(data, d => d.proizvodnja)]) // Max proizvodnja
+            .nice()
+            .range([height, 0]);
+
+        // Kreiraj ordinalnu skalu boja
+        const colorScale = d3.scaleOrdinal()
+            .domain(d3.range(10))  // Za 10 boja
+            .range(["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf"]);
+
+        // Dodavanje X i Y os
+        svg.append("g")
+            .attr("class", "axis")
+            .attr("transform", `translate(0,${height})`)
+            .call(d3.axisBottom(x));
+
+        svg.append("g")
+            .attr("class", "axis")
+            .call(d3.axisLeft(y));
+
+        // Dodaj naziv za Y os
+        svg.append("text")
+            .attr("transform", "rotate(-90)")
+            .attr("y", -margin.left + 20)
+            .attr("x", -height / 2)
+            .attr("dy", "1em")
+            .style("text-anchor", "middle")
+            .text("Proizvodnja (u tonama)");
+
+        // Dodaj naziv za X os
+        svg.append("text")
+            .attr("x", width / 2)
+            .attr("y", height + margin.bottom - 10)
+            .style("text-anchor", "middle")
+            .text("Godine");
+
+        // Dodaj stubce sa bojama
+        svg.selectAll(".bar")
+            .data(data)
+            .enter()
+            .append("rect")
+            .attr("class", "bar")
+            .attr("x", d => x(d.godina))  // Pozicija na X os
+            .attr("y", d => y(d.proizvodnja))  // Pozicija na Y os
+            .attr("width", x.bandwidth())  // Širina stubca
+            .attr("height", d => height - y(d.proizvodnja))  // Visina stubca
+            .attr("fill", (d, i) => colorScale(i));  // Boja prema ordinalnoj skali
+    </script>
+</body>
+</html>

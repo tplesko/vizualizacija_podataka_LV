@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linijski Graf za Tri Skupa Podataka</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <h1>Tri linijska grafa u zavisnosti namjene proizvodnje</h1>
+    <svg width="800" height="600"></svg>
+
+    <script>
+        // Tri skupa podataka
+        const data1 = [
+            { godina: "2008", vrijednost: 340952 },
+            { godina: "2009", vrijednost: 327678 },
+            { godina: "2010", vrijednost: 334405 },
+            { godina: "2011", vrijednost: 331989 },
+            { godina: "2012", vrijednost: 310851 },
+            { godina: "2013", vrijednost: 294125 },
+            { godina: "2014", vrijednost: 276380 },
+            { godina: "2015", vrijednost: 296793 },
+            { godina: "2016", vrijednost: 293445 },
+            { godina: "2017", vrijednost: 279195 },
+            { godina: "2018", vrijednost: 291871 },
+            { godina: "2019", vrijednost: 296746 },
+            { godina: "2020", vrijednost: 281820 },
+            { godina: "2021", vrijednost: 264776 },
+            { godina: "2022", vrijednost: 277769 },
+            { godina: "2023", vrijednost: 252898 }
+        ];
+
+        const data2 = [
+            { godina: "2008", vrijednost: 149647 },
+            { godina: "2009", vrijednost: 142453 },
+            { godina: "2010", vrijednost: 148044 },
+            { godina: "2011", vrijednost: 140541 },
+            { godina: "2012", vrijednost: 138489 },
+            { godina: "2013", vrijednost: 144427 },
+            { godina: "2014", vrijednost: 135523 },
+            { godina: "2015", vrijednost: 150152 },
+            { godina: "2016", vrijednost: 149958 },
+            { godina: "2017", vrijednost: 149958 },
+            { godina: "2018", vrijednost: 149877 },
+            { godina: "2019", vrijednost: 152868 },
+            { godina: "2020", vrijednost: 157270 },
+            { godina: "2021", vrijednost: 155362 },
+            { godina: "2022", vrijednost: 144465 },
+            { godina: "2023", vrijednost: 129226 }
+        ];
+
+        const data3 = [
+            { godina: "2008", vrijednost: 29571 },
+            { godina: "2009", vrijednost: 24796 },
+            { godina: "2010", vrijednost: 15434 },
+            { godina: "2011", vrijednost: 11570 },
+            { godina: "2012", vrijednost: 7241 },
+            { godina: "2013", vrijednost: 5694 },
+            { godina: "2014", vrijednost: 5351 },
+            { godina: "2015", vrijednost: 4638 },
+            { godina: "2016", vrijednost: 3775 },
+            { godina: "2017", vrijednost: 3246 },
+            { godina: "2018", vrijednost: 3048 },
+            { godina: "2019", vrijednost: 2862 },
+            { godina: "2020", vrijednost: 3062 },
+            { godina: "2021", vrijednost: 2518 },
+            { godina: "2022", vrijednost: 3096 },
+            { godina: "2023", vrijednost: 3062 }
+        ];
+
+        const margin = { top: 20, right: 30, bottom: 60, left: 100 };
+        const width = 800 - margin.left - margin.right;
+        const height = 600 - margin.top - margin.bottom;
+
+        const svg = d3.select("svg")
+            .append("g")
+            .attr("transform", `translate(${margin.left},${margin.top})`);
+
+        // Kreiranje X i Y skala
+        const x = d3.scaleBand()
+            .domain(data1.map(d => d.godina))  // godine iz prvog skupa podataka
+            .range([0, width])
+            .padding(0.1);
+
+        const y = d3.scaleLinear()
+            .domain([0, d3.max([d3.max(data1, d => d.vrijednost), d3.max(data2, d => d.vrijednost), d3.max(data3, d => d.vrijednost)])])  // Uzima najviši iz svih 3 skupa
+            .nice()
+            .range([height, 0]);
+
+        // Linije za svaki skup podataka
+        const line1 = d3.line()
+            .x(d => x(d.godina) + x.bandwidth() / 2)  // Pozicija X za liniju
+            .y(d => y(d.vrijednost));  // Pozicija Y za liniju
+
+        const line2 = d3.line()
+            .x(d => x(d.godina) + x.bandwidth() / 2)
+            .y(d => y(d.vrijednost));
+
+        const line3 = d3.line()
+            .x(d => x(d.godina) + x.bandwidth() / 2)
+            .y(d => y(d.vrijednost));
+
+        // Dodavanje linija za svaki skup podataka
+        svg.append("path")
+            .data([data1])
+            .attr("class", "line1")
+            .attr("d", line1)
+            .attr("fill", "none")
+            .attr("stroke", "#1f77b4")
+            .attr("stroke-width", 2);
+
+        svg.append("path")
+            .data([data2])
+            .attr("class", "line2")
+            .attr("d", line2)
+            .attr("fill", "none")
+            .attr("stroke", "#ff7f0e")
+            .attr("stroke-width", 2);
+
+        svg.append("path")
+            .data([data3])
+            .attr("class", "line3")
+            .attr("d", line3)
+            .attr("fill", "none")
+            .attr("stroke", "#2ca02c")
+            .attr("stroke-width", 2);
+
+        // Dodavanje X i Y os
+        svg.append("g")
+            .attr("transform", `translate(0,${height})`)
+            .call(d3.axisBottom(x));
+
+        svg.append("g")
+            .call(d3.axisLeft(y));
+
+        // Dodaj naziv za Y os
+        svg.append("text")
+            .attr("transform", "rotate(-90)")
+            .attr("y", -margin.left + 20)
+            .attr("x", -height / 2)
+            .attr("dy", "1em")
+            .style("text-anchor", "middle")
+            .text("Proizvodnja (u tonama)");
+
+        // Dodaj naziv za X os
+        svg.append("text")
+            .attr("x", width / 2)
+            .attr("y", height + margin.bottom - 10)
+            .style("text-anchor", "middle")
+            .text("Godine");
+
+        // Legenda
+        svg.append("rect")
+            .attr("x", 620)
+            .attr("y", 20)
+            .attr("width", 20)
+            .attr("height", 20)
+            .attr("fill", "#1f77b4");
+
+        svg.append("text")
+            .attr("x", 645)
+            .attr("y", 35)
+            .text("Za piće")
+            .style("font-size", "12px");
+
+        svg.append("rect")
+            .attr("x", 620)
+            .attr("y", 50)
+            .attr("width", 20)
+            .attr("height", 20)
+            .attr("fill", "#ff7f0e");
+
+        svg.append("text")
+            .attr("x", 645)
+            .attr("y", 65)
+            .text("Neobrano")
+            .style("font-size", "12px");
+
+        svg.append("rect")
+            .attr("x", 620)
+            .attr("y", 80)
+            .attr("width", 20)
+            .attr("height", 20)
+            .attr("fill", "#2ca02c");
+
+        svg.append("text")
+            .attr("x", 645)
+            .attr("y", 95)
+            .text("Obrano")
+            .style("font-size", "12px");
+    </script>
+</body>
+</html>

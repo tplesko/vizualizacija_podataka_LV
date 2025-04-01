@@ -1,0 +1,722 @@
+[
+  {
+    "godina": 2008,
+    "kategorija": "Mlijeko za piće (konzumno)",
+    "proizvodnja": 340952
+  },
+  {
+    "godina": 2009,
+    "kategorija": "Mlijeko za piće (konzumno)",
+    "proizvodnja": 327678
+  },
+  {
+    "godina": 2010,
+    "kategorija": "Mlijeko za piće (konzumno)",
+    "proizvodnja": 334405
+  },
+  {
+    "godina": 2011,
+    "kategorija": "Mlijeko za piće (konzumno)",
+    "proizvodnja": 331989
+  },
+  {
+    "godina": 2012,
+    "kategorija": "Mlijeko za piće (konzumno)",
+    "proizvodnja": 310851
+  },
+  {
+    "godina": 2013,
+    "kategorija": "Mlijeko za piće (konzumno)",
+    "proizvodnja": 294125
+  },
+  {
+    "godina": 2014,
+    "kategorija": "Mlijeko za piće (konzumno)",
+    "proizvodnja": 276380
+  },
+  {
+    "godina": 2015,
+    "kategorija": "Mlijeko za piće (konzumno)",
+    "proizvodnja": 296793
+  },
+  {
+    "godina": 2016,
+    "kategorija": "Mlijeko za piće (konzumno)",
+    "proizvodnja": 293445
+  },
+  {
+    "godina": 2017,
+    "kategorija": "Mlijeko za piće (konzumno)",
+    "proizvodnja": 279195
+  },
+  {
+    "godina": 2018,
+    "kategorija": "Mlijeko za piće (konzumno)",
+    "proizvodnja": 291871
+  },
+  {
+    "godina": 2019,
+    "kategorija": "Mlijeko za piće (konzumno)",
+    "proizvodnja": 296746
+  },
+  {
+    "godina": 2020,
+    "kategorija": "Mlijeko za piće (konzumno)",
+    "proizvodnja": 281820
+  },
+  {
+    "godina": 2021,
+    "kategorija": "Mlijeko za piće (konzumno)",
+    "proizvodnja": 264776
+  },
+  {
+    "godina": 2022,
+    "kategorija": "Mlijeko za piće (konzumno)",
+    "proizvodnja": 277769
+  },
+  {
+    "godina": 2023,
+    "kategorija": "Mlijeko za piće (konzumno)",
+    "proizvodnja": 252898
+  },
+  {
+    "godina": 2008,
+    "kategorija": "Neobrano i sirovo mlijeko",
+    "proizvodnja": 149647
+  },
+  {
+    "godina": 2009,
+    "kategorija": "Neobrano i sirovo mlijeko",
+    "proizvodnja": 142453
+  },
+  {
+    "godina": 2010,
+    "kategorija": "Neobrano i sirovo mlijeko",
+    "proizvodnja": 148044
+  },
+  {
+    "godina": 2011,
+    "kategorija": "Neobrano i sirovo mlijeko",
+    "proizvodnja": 140541
+  },
+  {
+    "godina": 2012,
+    "kategorija": "Neobrano i sirovo mlijeko",
+    "proizvodnja": 138489
+  },
+  {
+    "godina": 2013,
+    "kategorija": "Neobrano i sirovo mlijeko",
+    "proizvodnja": 144427
+  },
+  {
+    "godina": 2014,
+    "kategorija": "Neobrano i sirovo mlijeko",
+    "proizvodnja": 135523
+  },
+  {
+    "godina": 2015,
+    "kategorija": "Neobrano i sirovo mlijeko",
+    "proizvodnja": 150152
+  },
+  {
+    "godina": 2016,
+    "kategorija": "Neobrano i sirovo mlijeko",
+    "proizvodnja": 149958
+  },
+  {
+    "godina": 2017,
+    "kategorija": "Neobrano i sirovo mlijeko",
+    "proizvodnja": 149877
+  },
+  {
+    "godina": 2018,
+    "kategorija": "Neobrano i sirovo mlijeko",
+    "proizvodnja": 152868
+  },
+  {
+    "godina": 2019,
+    "kategorija": "Neobrano i sirovo mlijeko",
+    "proizvodnja": 157270
+  },
+  {
+    "godina": 2020,
+    "kategorija": "Neobrano i sirovo mlijeko",
+    "proizvodnja": 155362
+  },
+  {
+    "godina": 2021,
+    "kategorija": "Neobrano i sirovo mlijeko",
+    "proizvodnja": 137135
+  },
+  {
+    "godina": 2022,
+    "kategorija": "Neobrano i sirovo mlijeko",
+    "proizvodnja": 144465
+  },
+  {
+    "godina": 2023,
+    "kategorija": "Neobrano i sirovo mlijeko",
+    "proizvodnja": 129226
+  },
+  {
+    "godina": 2008,
+    "kategorija": "Djelomično obrano mlijeko",
+    "proizvodnja": 161734
+  },
+  {
+    "godina": 2009,
+    "kategorija": "Djelomično obrano mlijeko",
+    "proizvodnja": 160429
+  },
+  {
+    "godina": 2010,
+    "kategorija": "Djelomično obrano mlijeko",
+    "proizvodnja": 170927
+  },
+  {
+    "godina": 2011,
+    "kategorija": "Djelomično obrano mlijeko",
+    "proizvodnja": 179878
+  },
+  {
+    "godina": 2012,
+    "kategorija": "Djelomično obrano mlijeko",
+    "proizvodnja": 165121
+  },
+  {
+    "godina": 2013,
+    "kategorija": "Djelomično obrano mlijeko",
+    "proizvodnja": 144004
+  },
+  {
+    "godina": 2014,
+    "kategorija": "Djelomično obrano mlijeko",
+    "proizvodnja": 135506
+  },
+  {
+    "godina": 2015,
+    "kategorija": "Djelomično obrano mlijeko",
+    "proizvodnja": 142003
+  },
+  {
+    "godina": 2016,
+    "kategorija": "Djelomično obrano mlijeko",
+    "proizvodnja": 139712
+  },
+  {
+    "godina": 2017,
+    "kategorija": "Djelomično obrano mlijeko",
+    "proizvodnja": 126072
+  },
+  {
+    "godina": 2018,
+    "kategorija": "Djelomično obrano mlijeko",
+    "proizvodnja": 135955
+  },
+  {
+    "godina": 2019,
+    "kategorija": "Djelomično obrano mlijeko",
+    "proizvodnja": 136614
+  },
+  {
+    "godina": 2020,
+    "kategorija": "Djelomično obrano mlijeko",
+    "proizvodnja": 123396
+  },
+  {
+    "godina": 2021,
+    "kategorija": "Djelomično obrano mlijeko",
+    "proizvodnja": 125123
+  },
+  {
+    "godina": 2022,
+    "kategorija": "Djelomično obrano mlijeko",
+    "proizvodnja": 130208
+  },
+  {
+    "godina": 2023,
+    "kategorija": "Djelomično obrano mlijeko",
+    "proizvodnja": 120610
+  },
+  {
+    "godina": 2008,
+    "kategorija": "Obrano mlijeko",
+    "proizvodnja": 29571
+  },
+  {
+    "godina": 2009,
+    "kategorija": "Obrano mlijeko",
+    "proizvodnja": 24796
+  },
+  {
+    "godina": 2010,
+    "kategorija": "Obrano mlijeko",
+    "proizvodnja": 15434
+  },
+  {
+    "godina": 2011,
+    "kategorija": "Obrano mlijeko",
+    "proizvodnja": 11570
+  },
+  {
+    "godina": 2012,
+    "kategorija": "Obrano mlijeko",
+    "proizvodnja": 7241
+  },
+  {
+    "godina": 2013,
+    "kategorija": "Obrano mlijeko",
+    "proizvodnja": 5694
+  },
+  {
+    "godina": 2014,
+    "kategorija": "Obrano mlijeko",
+    "proizvodnja": 5351
+  },
+  {
+    "godina": 2015,
+    "kategorija": "Obrano mlijeko",
+    "proizvodnja": 4638
+  },
+  {
+    "godina": 2016,
+    "kategorija": "Obrano mlijeko",
+    "proizvodnja": 3775
+  },
+  {
+    "godina": 2017,
+    "kategorija": "Obrano mlijeko",
+    "proizvodnja": 3246
+  },
+  {
+    "godina": 2018,
+    "kategorija": "Obrano mlijeko",
+    "proizvodnja": 3048
+  },
+  {
+    "godina": 2019,
+    "kategorija": "Obrano mlijeko",
+    "proizvodnja": 2862
+  },
+  {
+    "godina": 2020,
+    "kategorija": "Obrano mlijeko",
+    "proizvodnja": 3062
+  },
+  {
+    "godina": 2021,
+    "kategorija": "Obrano mlijeko",
+    "proizvodnja": 2518
+  },
+  {
+    "godina": 2022,
+    "kategorija": "Obrano mlijeko",
+    "proizvodnja": 3096
+  },
+  {
+    "godina": 2023,
+    "kategorija": "Obrano mlijeko",
+    "proizvodnja": 3062
+  },
+  {
+    "godina": 2008,
+    "kategorija": "Mlaćenica",
+    "proizvodnja": 1009
+  },
+  {
+    "godina": 2009,
+    "kategorija": "Mlaćenica",
+    "proizvodnja": 1461
+  },
+  {
+    "godina": 2010,
+    "kategorija": "Mlaćenica",
+    "proizvodnja": 1142
+  },
+  {
+    "godina": 2011,
+    "kategorija": "Mlaćenica",
+    "proizvodnja": 1277
+  },
+  {
+    "godina": 2012,
+    "kategorija": "Mlaćenica",
+    "proizvodnja": 1438
+  },
+  {
+    "godina": 2013,
+    "kategorija": "Mlaćenica",
+    "proizvodnja": 1554
+  },
+  {
+    "godina": 2014,
+    "kategorija": "Mlaćenica",
+    "proizvodnja": 0
+  },
+  {
+    "godina": 2015,
+    "kategorija": "Mlaćenica",
+    "proizvodnja": 0
+  },
+  {
+    "godina": 2016,
+    "kategorija": "Mlaćenica",
+    "proizvodnja": 0
+  },
+  {
+    "godina": 2017,
+    "kategorija": "Mlaćenica",
+    "proizvodnja": 0
+  },
+  {
+    "godina": 2018,
+    "kategorija": "Mlaćenica",
+    "proizvodnja": 0
+  },
+  {
+    "godina": 2019,
+    "kategorija": "Mlaćenica",
+    "proizvodnja": 0
+  },
+  {
+    "godina": 2020,
+    "kategorija": "Mlaćenica",
+    "proizvodnja": 0
+  },
+  {
+    "godina": 2021,
+    "kategorija": "Mlaćenica",
+    "proizvodnja": 0
+  },
+  {
+    "godina": 2022,
+    "kategorija": "Mlaćenica",
+    "proizvodnja": 0
+  },
+  {
+    "godina": 2023,
+    "kategorija": "Mlaćenica",
+    "proizvodnja": 0
+  },
+  {
+    "godina": 2008,
+    "kategorija": "Vrhnje",
+    "proizvodnja": 26274
+  },
+  {
+    "godina": 2009,
+    "kategorija": "Vrhnje",
+    "proizvodnja": 26731
+  },
+  {
+    "godina": 2010,
+    "kategorija": "Vrhnje",
+    "proizvodnja": 26201
+  },
+  {
+    "godina": 2011,
+    "kategorija": "Vrhnje",
+    "proizvodnja": 25988
+  },
+  {
+    "godina": 2012,
+    "kategorija": "Vrhnje",
+    "proizvodnja": 26504
+  },
+  {
+    "godina": 2013,
+    "kategorija": "Vrhnje",
+    "proizvodnja": 26660
+  },
+  {
+    "godina": 2014,
+    "kategorija": "Vrhnje",
+    "proizvodnja": 26350
+  },
+  {
+    "godina": 2015,
+    "kategorija": "Vrhnje",
+    "proizvodnja": 27342
+  },
+  {
+    "godina": 2016,
+    "kategorija": "Vrhnje",
+    "proizvodnja": 29408
+  },
+  {
+    "godina": 2017,
+    "kategorija": "Vrhnje",
+    "proizvodnja": 30506
+  },
+  {
+    "godina": 2018,
+    "kategorija": "Vrhnje",
+    "proizvodnja": 32037
+  },
+  {
+    "godina": 2019,
+    "kategorija": "Vrhnje",
+    "proizvodnja": 35406
+  },
+  {
+    "godina": 2020,
+    "kategorija": "Vrhnje",
+    "proizvodnja": 33033
+  },
+  {
+    "godina": 2021,
+    "kategorija": "Vrhnje",
+    "proizvodnja": 32096
+  },
+  {
+    "godina": 2022,
+    "kategorija": "Vrhnje",
+    "proizvodnja": 32458
+  },
+  {
+    "godina": 2023,
+    "kategorija": "Vrhnje",
+    "proizvodnja": 32114
+  },
+  {
+    "godina": 2008,
+    "kategorija": "Fermentirani proizvodi (jogurti, napici od jogurta i dr.)",
+    "proizvodnja": 86378
+  },
+  {
+    "godina": 2009,
+    "kategorija": "Fermentirani proizvodi (jogurti, napici od jogurta i dr.)",
+    "proizvodnja": 82076
+  },
+  {
+    "godina": 2010,
+    "kategorija": "Fermentirani proizvodi (jogurti, napici od jogurta i dr.)",
+    "proizvodnja": 78476
+  },
+  {
+    "godina": 2011,
+    "kategorija": "Fermentirani proizvodi (jogurti, napici od jogurta i dr.)",
+    "proizvodnja": 81943
+  },
+  {
+    "godina": 2012,
+    "kategorija": "Fermentirani proizvodi (jogurti, napici od jogurta i dr.)",
+    "proizvodnja": 81464
+  },
+  {
+    "godina": 2013,
+    "kategorija": "Fermentirani proizvodi (jogurti, napici od jogurta i dr.)",
+    "proizvodnja": 73981
+  },
+  {
+    "godina": 2014,
+    "kategorija": "Fermentirani proizvodi (jogurti, napici od jogurta i dr.)",
+    "proizvodnja": 71515
+  },
+  {
+    "godina": 2015,
+    "kategorija": "Fermentirani proizvodi (jogurti, napici od jogurta i dr.)",
+    "proizvodnja": 84972
+  },
+  {
+    "godina": 2016,
+    "kategorija": "Fermentirani proizvodi (jogurti, napici od jogurta i dr.)",
+    "proizvodnja": 90384
+  },
+  {
+    "godina": 2017,
+    "kategorija": "Fermentirani proizvodi (jogurti, napici od jogurta i dr.)",
+    "proizvodnja": 85960
+  },
+  {
+    "godina": 2018,
+    "kategorija": "Fermentirani proizvodi (jogurti, napici od jogurta i dr.)",
+    "proizvodnja": 96098
+  },
+  {
+    "godina": 2019,
+    "kategorija": "Fermentirani proizvodi (jogurti, napici od jogurta i dr.)",
+    "proizvodnja": 94715
+  },
+  {
+    "godina": 2020,
+    "kategorija": "Fermentirani proizvodi (jogurti, napici od jogurta i dr.)",
+    "proizvodnja": 89522
+  },
+  {
+    "godina": 2021,
+    "kategorija": "Fermentirani proizvodi (jogurti, napici od jogurta i dr.)",
+    "proizvodnja": 89917
+  },
+  {
+    "godina": 2022,
+    "kategorija": "Fermentirani proizvodi (jogurti, napici od jogurta i dr.)",
+    "proizvodnja": 90069
+  },
+  {
+    "godina": 2023,
+    "kategorija": "Fermentirani proizvodi (jogurti, napici od jogurta i dr.)",
+    "proizvodnja": 92851
+  },
+  {
+    "godina": 2008,
+    "kategorija": "Napici s mliječnom bazom",
+    "proizvodnja": 13552
+  },
+  {
+    "godina": 2009,
+    "kategorija": "Napici s mliječnom bazom",
+    "proizvodnja": 22226
+  },
+  {
+    "godina": 2010,
+    "kategorija": "Napici s mliječnom bazom",
+    "proizvodnja": 21255
+  },
+  {
+    "godina": 2011,
+    "kategorija": "Napici s mliječnom bazom",
+    "proizvodnja": 21981
+  },
+  {
+    "godina": 2012,
+    "kategorija": "Napici s mliječnom bazom",
+    "proizvodnja": 19175
+  },
+  {
+    "godina": 2013,
+    "kategorija": "Napici s mliječnom bazom",
+    "proizvodnja": 21774
+  },
+  {
+    "godina": 2014,
+    "kategorija": "Napici s mliječnom bazom",
+    "proizvodnja": 20102
+  },
+  {
+    "godina": 2015,
+    "kategorija": "Napici s mliječnom bazom",
+    "proizvodnja": 19506
+  },
+  {
+    "godina": 2016,
+    "kategorija": "Napici s mliječnom bazom",
+    "proizvodnja": 18949
+  },
+  {
+    "godina": 2017,
+    "kategorija": "Napici s mliječnom bazom",
+    "proizvodnja": 19432
+  },
+  {
+    "godina": 2018,
+    "kategorija": "Napici s mliječnom bazom",
+    "proizvodnja": 21968
+  },
+  {
+    "godina": 2019,
+    "kategorija": "Napici s mliječnom bazom",
+    "proizvodnja": 23630
+  },
+  {
+    "godina": 2020,
+    "kategorija": "Napici s mliječnom bazom",
+    "proizvodnja": 22777
+  },
+  {
+    "godina": 2021,
+    "kategorija": "Napici s mliječnom bazom",
+    "proizvodnja": 22512
+  },
+  {
+    "godina": 2022,
+    "kategorija": "Napici s mliječnom bazom",
+    "proizvodnja": 20012
+  },
+  {
+    "godina": 2023,
+    "kategorija": "Napici s mliječnom bazom",
+    "proizvodnja": 17784
+  },
+  {
+    "godina": 2008,
+    "kategorija": "Ostali svježi proizvodi (mliječni žele i sl.)",
+    "proizvodnja": 6350
+  },
+  {
+    "godina": 2009,
+    "kategorija": "Ostali svježi proizvodi (mliječni žele i sl.)",
+    "proizvodnja": 6295
+  },
+  {
+    "godina": 2010,
+    "kategorija": "Ostali svježi proizvodi (mliječni žele i sl.)",
+    "proizvodnja": 5725
+  },
+  {
+    "godina": 2011,
+    "kategorija": "Ostali svježi proizvodi (mliječni žele i sl.)",
+    "proizvodnja": 6115
+  },
+  {
+    "godina": 2012,
+    "kategorija": "Ostali svježi proizvodi (mliječni žele i sl.)",
+    "proizvodnja": 6424
+  },
+  {
+    "godina": 2013,
+    "kategorija": "Ostali svježi proizvodi (mliječni žele i sl.)",
+    "proizvodnja": 7808
+  },
+  {
+    "godina": 2014,
+    "kategorija": "Ostali svježi proizvodi (mliječni žele i sl.)",
+    "proizvodnja": 0
+  },
+  {
+    "godina": 2015,
+    "kategorija": "Ostali svježi proizvodi (mliječni žele i sl.)",
+    "proizvodnja": 0
+  },
+  {
+    "godina": 2016,
+    "kategorija": "Ostali svježi proizvodi (mliječni žele i sl.)",
+    "proizvodnja": 0
+  },
+  {
+    "godina": 2017,
+    "kategorija": "Ostali svježi proizvodi (mliječni žele i sl.)",
+    "proizvodnja": 0
+  },
+  {
+    "godina": 2018,
+    "kategorija": "Ostali svježi proizvodi (mliječni žele i sl.)",
+    "proizvodnja": 0
+  },
+  {
+    "godina": 2019,
+    "kategorija": "Ostali svježi proizvodi (mliječni žele i sl.)",
+    "proizvodnja": 0
+  },
+  {
+    "godina": 2020,
+    "kategorija": "Ostali svježi proizvodi (mliječni žele i sl.)",
+    "proizvodnja": 0
+  },
+  {
+    "godina": 2021,
+    "kategorija": "Ostali svježi proizvodi (mliječni žele i sl.)",
+    "proizvodnja": 0
+  },
+  {
+    "godina": 2022,
+    "kategorija": "Ostali svježi proizvodi (mliječni žele i sl.)",
+    "proizvodnja": 0
+  },
+  {
+    "godina": 2023,
+    "kategorija": "Ostali svježi proizvodi (mliječni žele i sl.)",
+    "proizvodnja": 12177
+  }
+]
