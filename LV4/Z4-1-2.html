@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <title>LV4 z1 i z2</title>
+</head>
+<body>
+  <svg width="700" height="700"></svg>
+
+  <script>
+    const width = 700;
+    const height = 700;
+    const radius = 200;
+
+    const data = [
+      { name: "jabuka", value: 17 },
+      { name: "kruska", value: 4 },
+      { name: "banana", value: 83 },
+      { name: "jagoda", value: 47 },
+      { name: "ribizla", value: 1 }
+    ];
+
+    const color = d3.scaleOrdinal(d3.schemeCategory10);
+
+    const arc = d3.arc()
+      .innerRadius(0)
+      .outerRadius(radius);
+
+    //2. zadatak - tekst iznad sektora
+    const labelArc = d3.arc()
+      .innerRadius(radius + 20)
+      .outerRadius(radius + 20);
+
+    const pie = d3.pie()
+      .value(d => d.value);
+
+    const svg = d3.select("svg")
+      .append("g")
+      .attr("transform", `translate(${width / 2}, ${height / 2})`);
+
+    const arcs = svg.selectAll("g")
+      .data(pie(data))
+      .enter()
+      .append("g");
+
+    arcs.append("path")
+      .attr("d", arc)
+      .attr("fill", (d, i) => color(i));
+
+    arcs.append("text")
+      .attr("transform", d => {
+        const [x, y] = labelArc.centroid(d);
+        const angle = (d.startAngle + d.endAngle) / 2;
+        const rotate = (angle * 180) / Math.PI - 90;
+        return `translate(${x}, ${y}) rotate(${rotate})`;
+      })
+      .attr("text-anchor", "start")
+      .text(d => `${d.data.name}: ${d.data.value}`);
+  </script>
+</body>
+</html>

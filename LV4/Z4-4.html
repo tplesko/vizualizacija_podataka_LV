@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <title>LV4 Z4 – Stablo</title>
+  <style>
+    .node circle {
+      fill: #fff;
+      stroke: steelblue;
+      stroke-width: 1.5px;
+      cursor: pointer;
+    }
+
+    .node text {
+      font: 12px sans-serif;
+    }
+
+    .link {
+      fill: none;
+      stroke: #ccc;
+      stroke-width: 1.5px;
+    }
+  </style>
+</head>
+<body>
+  <svg width="700" height="700"></svg>
+
+  <script>
+    const data = {
+      name: "voće",
+      children: [
+        {
+          name: "jabuka",
+          children: [
+            { name: "zlatni delišes" },
+            { name: "granny smith" },
+            { name: "fuji" }
+          ]
+        },
+        { name: "banana" },
+        {
+          name: "kruska",
+          children: [
+            { name: "babuška" },
+            { name: "abbe fetel" },
+            { name: "đurđevačka trorotka" },
+            { name: "lubeničarka" }
+          ]
+        },
+        {
+          name: "jagoda",
+          children: [
+            { name: "alba" },
+            { name: "asia" },
+            { name: "senga sengana" }
+          ]
+        },
+        {
+          name: "ribiz",
+          children: [
+            { name: "rotet" },
+            { name: "red lake" },
+            { name: "stanza" },
+            { name: "rovada" }
+          ]
+        }
+      ]
+    };
+
+    const width = 700;
+    const height = 700;
+    let i = 0;
+
+    const svg = d3.select("svg")
+      .append("g")
+      .attr("transform", "translate(40,0)");
+
+    const treeLayout = d3.tree().size([height - 100, width - 160]);
+    let root = d3.hierarchy(data);
+    root.x0 = height / 2;
+    root.y0 = 0;
+
+    // Inicijalno sakrij svu djecu
+    if (root.children) {
+      root.children.forEach(collapse);
+    }
+
+    update(root);
+
+    function collapse(d) {
+      if (d.children) {
+        d._children = d.children;
+        d._children.forEach(collapse);
+        d.children = null;
+      }
+    }
+
+    function update(source) {
+      const treeData = treeLayout(root);
+      const nodes = treeData.descendants();
+      const links = treeData.links();
+
+      nodes.forEach(d => d.y = d.depth * 120);
+
+      // ČVOROVI
+      const node = svg.selectAll("g.node")
+        .data(nodes, d => d.id || (d.id = ++i));
+
+      const nodeEnter = node.enter()
+        .append("g")
+        .attr("class", "node")
+        .attr("transform", d => `translate(${source.y0},${source.x0})`)
+        .on("click", (event, d) => {
+          if (d.children) {
+            d._children = d.children;
+            d.children = null;
+          } else {
+            d.children = d._children;
+            d._children = null;
+          }
+          update(d);
+        });
+
+      nodeEnter.append("circle")
+        .attr("r", 5)
+        .style("fill", d => d._children ? "lightsteelblue" : "#fff");
+
+      nodeEnter.append("text")
+        .attr("dy", ".35em")
+        .attr("x", d => d.children || d._children ? -10 : 10)
+        .attr("text-anchor", d => d.children || d._children ? "end" : "start")
+        .text(d => d.data.name);
+
+      const nodeUpdate = nodeEnter.merge(node);
+
+      nodeUpdate.transition()
+        .duration(500)
+        .attr("transform", d => `translate(${d.y},${d.x})`);
+
+      node.exit().transition()
+        .duration(500)
+        .attr("transform", d => `translate(${source.y},${source.x})`)
+        .remove();
+
+      // VEZE
+      const link = svg.selectAll("path.link")
+        .data(links, d => d.target.id);
+
+      const linkEnter = link.enter()
+        .insert("path", "g")
+        .attr("class", "link")
+        .attr("d", d3.linkHorizontal()
+          .x(d => source.y)
+          .y(d => source.x));
+
+      linkEnter.merge(link)
+        .transition()
+        .duration(500)
+        .attr("d", d3.linkHorizontal()
+          .x(d => d.y)
+          .y(d => d.x));
+
+      link.exit().transition()
+        .duration(500)
+        .attr("d", d3.linkHorizontal()
+          .x(d => source.y)
+          .y(d => source.x))
+        .remove();
+    }
+  </script>
+</body>
+</html>
