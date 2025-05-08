@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadatak 3 - Podaci po županijama</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/topojson-client@3"></script>
+    <style>
+        body { font-family: sans-serif; }
+        #info {
+            margin: 10px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            width: fit-content;
+            background-color: #f9f9f9;
+        }
+        svg {
+            border: 1px solid #aaa;
+        }
+        .county {
+            stroke: #333;
+            stroke-width: 0.5;
+            cursor: pointer;
+        }
+        .county:hover {
+            stroke-width: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <h2>Karta RH s prikazom podataka po županijama</h2>
+    <div id="info">Kliknite na županiju za prikaz podataka</div>
+    <svg width="800" height="800"></svg>
+
+    <script>
+        const width = 800, height = 800;
+        const svg = d3.select("svg");
+        const info = d3.select("#info");
+        const g = svg.append("g");
+
+        d3.json("cro.json").then(function(data) {
+            const counties = topojson.feature(data, data.objects.layer1).features;
+
+            const projection = d3.geoMercator()
+                .fitSize([width, height], { type: "FeatureCollection", features: counties });
+            const path = d3.geoPath().projection(projection);
+
+            // Skala boja na temelju populacije
+            const populations = counties.map(d => d.properties.population);
+            const color = d3.scaleSequential(d3.interpolateBlues)
+                .domain([d3.min(populations), d3.max(populations)]);
+
+            g.selectAll("path")
+                .data(counties)
+                .enter().append("path")
+                .attr("class", "county")
+                .attr("d", path)
+                .attr("fill", d => color(d.properties.population))
+                .on("click", function(event, d) {
+                    info.html(
+                        `<strong>${d.properties.name}</strong><br>
+                         Broj stanovnika: ${d.properties.population.toLocaleString()}<br>
+                         Površina: ${d.properties.area} km²`
+                    );
+                });
+        });
+    </script>
+</body>
+</html>
